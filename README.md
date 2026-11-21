@@ -1,11 +1,11 @@
-# Projeto Prático: Grafo de Fluxo de Controle (CFG) e Teste de Caixa Branca
+#🧪 Projeto Prático: Grafo de Fluxo de Controle (CFG) e Teste de Caixa Branca
 
-## Objetivo
+##📌 Objetivo
 Desenvolver um Grafo de Fluxo de Controle (CFG) para o código que representa uma "operação de saque" contendo todos os nós necessários da operação e realizar o teste de Caixa Branca para avaliar o comportamento interno do sistema, testando lógica, fluxo de dados e caminhos de execução.
 
 ---
 
-## 1. Mapeamento do Grafo de Fluxo de Controle (CFG)
+##📊 1. Mapeamento do Grafo de Fluxo de Controle (CFG)
 
 O diagrama abaixo foi modelado utilizando a ferramenta *Visual Paradigm* (arquivo fonte disponível em [Diagrama_Fluxo_Controle.untitled.vpp](Atividade_Caixa_Branca/ASSETS/Diagrama_Fluxo_Controle.untitled.vpp)):
 
@@ -18,33 +18,33 @@ O grafo ilustra visualmente a estrutura de decisão e os caminhos descritos abai
 
 ---
 
-## 2. Código Desenvolvido ([atividade_caixaBranca.py](Atividade_Caixa_Branca/atividade_caixaBranca.py))
+##💻 2. Código Desenvolvido ([atividade_caixaBranca.py](Atividade_Caixa_Branca/atividade_caixaBranca.py))
 
 A função saque(valor, saldo, limite_credito) verifica inicialmente se o valor solicitado é menor ou igual ao saldo disponível. Caso não seja, verifica se a soma do saldo com o limite de crédito cobre o valor, zerando o saldo e descontando a diferença do limite.
 
 ---
 
-## 3. Testes de Caixa Branca (Caminhos e Valor Limite)
+##🔍 3. Testes de Caixa Branca (Caminhos e Valor Limite)
 
-### Caminho 1: Sucesso Via Saldo
+###✅ Caminho 1: Sucesso Via Saldo
 * *Argumentos:* saldo = 1000, limite_credito = 500, valor = 900
 * *Comportamento:* Como o valor do saque é menor que o saldo disponível, executa a primeira condicional if e retorna o sucesso da operação (True) com o saldo atualizado (R$ 100) e o limite intacto (R$ 500).
 
 ![Execução Caminho 1](Atividade_Caixa_Branca/ASSETS/Valor_Solicitado_Menor_Que_Saldo%202026-11-10.png)
 
-### Teste de Valor Limite (Caminho 1 — Fronteira valor == saldo)
+###⚖️ Teste de Valor Limite (Caminho 1 — Fronteira valor == saldo)
 * *Argumentos:* saldo = 1000, limite_credito = 500, valor = 1000
 * *Comportamento:* Valida o limite exato da condição valor <= saldo. A operação é aprovada (status = True), o saldo é zerado (R$ 0) e o limite_credito permanece intacto (R$ 500).
 
 ![Execução Valor Limite](Atividade_Caixa_Branca/ASSETS/Valor_Solicitado_Igual_OSaldo%202026-11-10.png)
 
-### Caminho 2: Sucesso Via Limite
+###💳 Caminho 2: Sucesso Via Limite
 * *Argumentos:* saldo = 1000, limite_credito = 500, valor = 1200
 * *Comportamento:* O valor do saque é maior que o saldo disponível, mas coberto pelo limite de crédito. Executa a segunda condicional elif, atualiza o saldo para 0 e debita a diferença (200) do limite de crédito, resultando em limite_credito = 300 e status = True.
 
 ![Execução Caminho 2](Atividade_Caixa_Branca/ASSETS/Valor_Solicitado_Maior_Saldo_Mas_No_Limite_Credito%202026-11-10.png)
 
-### Caminho 3: Recusa Total
+###❌ Caminho 3: Recusa Total
 * *Argumentos:* saldo = 1000, limite_credito = 500, valor = 1600
 * *Comportamento:* O valor do saque ultrapassa tanto o saldo disponível quanto o limite de crédito. A função encerra com status = False e mantém o saldo (1000) e o limite_credito (500) sem alterações.
 
