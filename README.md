@@ -66,10 +66,12 @@ Qualidade_Automação_Testes/
     ├── atividade_caixaBranca.py
     └── README.md
 ```
-    ---
+   
 
 ## 🧑‍💻 Autor
 
 Desenvolvido por *sergio-santosjr*
 
 🔗 [GitHub](https://github.com/sergio-santosjr/Teste_Caixa_Branca_Opera-o_Saque)
+
+ ---
