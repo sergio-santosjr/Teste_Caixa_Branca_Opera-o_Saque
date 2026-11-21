@@ -1,5 +1,7 @@
 #🧪 Projeto Prático: Grafo de Fluxo de Controle (CFG) e Teste de Caixa Branca
 
+---
+
 ##📌 Objetivo
 Desenvolver um Grafo de Fluxo de Controle (CFG) para o código que representa uma "operação de saque" contendo todos os nós necessários da operação e realizar o teste de Caixa Branca para avaliar o comportamento interno do sistema, testando lógica, fluxo de dados e caminhos de execução.
 
